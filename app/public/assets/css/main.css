@@ -1,0 +1,127 @@
+* {
+	font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif !important;
+    padding: 0;
+    margin: 0;
+}
+
+i {
+	font-family: 'Material Icons' !important;
+}
+
+/*
+#3c4043
+#5f6368
+#bdc1c6
+#f1f3f4
+#273236
+*/
+
+html, body {
+	background: #fff;
+	height: 100%;
+}
+
+/* background: #fedbd0; */
+/* .primary-color-dark {
+	background: #f7d4b8;
+}
+.primary-color-mid {
+	background: #ffdcd6;
+}
+.primary-color-light {
+	background: #feeae6;
+}
+.secondary-color-dark {
+	background: #393b50;
+}
+.secondary-color-mid {
+	background: #424558;
+}
+.secondary-color-light {
+	background: #4b4e61;
+} */
+.primary-color-dark {
+	background: #3c4043;
+}
+.primary-color-mid {
+	background: #273236;
+}
+.primary-color-light {
+	background: #5f6368;
+}
+.secondary-color-dark {
+	background: #393b50;
+}
+.secondary-color-mid {
+	background: #424558;
+}
+.secondary-color-light {
+	background: #fafafa;
+}
+
+.material-tooltip {
+	padding: 6px 10px !important;
+	height: 26px !important;
+	min-height: 26px !important;
+	font-size: 12px !important;
+	background: rgba(0, 0, 0, .68);
+	border-radius: 15px;
+}
+
+.view_error {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -100%);
+	color: #bdc1c6;
+}
+
+#ccontainer {
+    height: 100%;
+}
+
+
+
+.center {
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+
+
+.main-container {
+	position: absolute;
+	/* background: yellow; */
+	top: 64px;
+	width: 100%;
+	min-height: calc(100% - 64px);
+	height: auto;
+	/* background: #aaa; */
+}
+
+main {
+	position: absolute;
+	top: 64px;
+	width: 100%;
+	min-height: calc(100% - 64px);
+	height: auto;
+}
+
+.content-container {
+	/* background: #aaa; */
+}
+
+.content {
+	position: relative;
+	width: 70%;
+	margin: 100px auto;
+	padding: 48px;
+	background: #fff;
+}
+
+.card-panel {
+	/* position: absolute;
+	top: 0;
+	bottom: 0; */
+	margin: 100px auto !important;
+}

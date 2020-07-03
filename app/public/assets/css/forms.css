@@ -1,0 +1,27 @@
+.input-field {
+	width: auto;
+	padding: 0;
+	margin: 32px;
+}
+
+.btn-form {
+	width: 100% !important;
+	height: 48px !important;
+	margin-top: 56px;
+	border-radius: 0 !important;
+	/* box-shadow: none !important; */
+	box-shadow: inset 0px 52px 12px -55px rgba(0,0,0,0.75) !important;
+	font-weight: 500;
+	line-height: 48px;
+}
+
+.btn-form-left {
+	border-radius: 0 0 0 2px !important;
+	background: #9cc3ff;
+}
+.btn-form-left:hover {
+	background: #77a7f2;
+}
+.btn-form-right {
+	border-radius: 0 0 2px 0 !important;
+}

@@ -1,0 +1,73 @@
+.nav {
+	position: fixed;
+	width: 100%;
+	z-index: 999;
+	height: 64px !important;
+	padding: 0 16px;
+	margin: 0;
+	top: 0;
+	/* height: 64px !important; */
+}
+.nav-link {
+	line-height: 64px !important;
+	font-size: 13px !important;
+	padding: 0 24px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+.nav-link::selection, i::selection {
+    background-color: transparent;
+}
+.nav-dropdown {
+	padding: 0 8px;
+}
+#nav-dropdown {
+	top: -56px;
+	width: auto !important;
+}
+#nav-dropdown a {
+	text-align: right;
+}
+.sidenav {
+	/* background: red; */
+	vertical-align: bottom;
+}
+.sidenav i {
+	/* padding: 4px 15px; */
+}
+.sidenav ul {
+	position: absolute;
+	bottom: 60px;
+	width: 100%;
+	/* background: green; */
+}
+.sidenav li:first-child a {
+	line-height: 64px !important;
+	height: 64px !important;
+	/* background: yellow; */
+}
+.sidenav li:first-child a i {
+	line-height: 64px !important;
+	height: 64px !important;
+}
+.sidenav li {
+	/* background: red; */
+}
+.sidenav li:hover {
+	background: #fafafa;
+}
+
+.sidenav-trigger i {
+	line-height: 64px !important;
+	cursor: pointer;
+}
+.sidenav-icon {
+	/* height: 64px !important; */
+	color: #555;
+}
+.nav-layer {
+	position: relative;
+	top: 0;
+	height: 64px;
+	margin: 0;
+}
