@@ -1,26 +1,9 @@
 <?php
 
-
-// include_once('../../public/router.php');
-//
-// controllers("DatabaseController.php");
-// controllers("ValidationController.php");
-// models("User.php");
-
-// spl_autoload_register();
-
 define('LOGIN_ALREADY_OCCUPIED', 'Ten login jest już zajęty.');
 define('EMAIL_ALREADY_OCCUPIED', 'Ten email jest już zajęty.');
 define('AUTHENTICATION_FAIL_ERROR', 'Błędny login lub hasło.');
 
-// if ($cookie = isset($_COOKIE['rememberme']) ? $_COOKIE['rememberme'] : '')
-// {
-// 	echo json_encode($cookie);
-// }
-// else
-// {
-// 	echo json_encode('no cookie for u');
-// }
 if (session_status() != PHP_SESSION_ACTIVE) session_start();
 
 function ArgumentError($method, $arg)
@@ -43,12 +26,12 @@ class SessionController {
 
 		// $pd = password_hash($password, PASSWORD_DEFAULT);
 		// echo password_verify($password, $pd);
-		
+
 		$result = DatabaseController::Connect();
 		if ($result)
 			return $result;
 
-		$select = 'select user_id, login, email from users where login = \'' . $login . '\' and password = \'' . $password . '\'';
+		$select = "SELECT user_id, login, email FROM users WHERE login = '{$login}' AND password = '{$password}';";
 		$result = DatabaseController::Query($select);
 
 		if (!$result)
@@ -78,8 +61,8 @@ class SessionController {
 			return $result;
 
 		$user_id = $_SESSION['user']->GetId();
-		// $select = "SELECT make, model, year_of_production FROM Vehicles WHERE user_id = '{$user_id}'";
-		$select = "SELECT vehicle_unit_id, make, model FROM vehicles_units NATURAL JOIN vehicles WHERE user_id = '{$user_id}'";
+
+		$select = "SELECT vehicle_unit_id, vehicle_id, make, model FROM vehicles_units NATURAL JOIN vehicles WHERE user_id = '{$user_id}'";
 		$result = DatabaseController::Query($select);
 
 		if (!$result)

@@ -21,11 +21,10 @@
 #my-vehicles-list th:nth-child(3), #my-vehicles-list td:nth-child(3) {
 	width: auto;
 }
-#my-vehicles-list th:last-child, #my-vehicles-list td:last-child {
+/* #my-vehicles-list th:last-child, #my-vehicles-list td:last-child {
 	text-align: right;
 	width: 170px;
-	/* background: red; */
-}
+} */
 
 #my-vehicles-list div {
 	display: flex;

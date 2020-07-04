@@ -36,7 +36,6 @@
 				</th>
 				<th>Marka</th>
 				<th>Model</th>
-				<th>Średnie spalanie</th>
 			</tr>
         </thead>
 		<tbody>
@@ -53,7 +52,6 @@
 					<td id="vehicle_id"><?php echo $vehicle['vehicle_unit_id']; ?></td>
 					<td><?php echo $vehicle['make']; ?></td>
 					<td><?php echo $vehicle['model']; ?></td>
-					<td><?php echo $vehicle['vehicle_unit_id']; ?></td>
 				</tr>
 
 			<?php endforeach; endif; ?>
@@ -131,7 +129,7 @@
 		if (removed.length == 0) return;
 		var data = 'header=delete_vehicles&vehicles=' + removed;
 		console.log(data);
-		var response = post2(data);
+		var response = post(data);
 
 		response.done(function(result, status, jqXHR){
 			console.log(data);

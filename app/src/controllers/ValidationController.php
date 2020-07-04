@@ -1,7 +1,7 @@
 <?php
 
 define('LOGIN_MIN_LENGTH', 4);
-define('LOGIN_MAX_LENGTH', 8);
+define('LOGIN_MAX_LENGTH', 32);
 define('PASSWORD_MIN_LENGTH', 8);
 define('PASSWORD_MAX_LENGTH', 32);
 

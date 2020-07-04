@@ -33,7 +33,7 @@
 		<!-- <input name="header" type="text" value="form_validation" /> -->
 
 		<div class="col s6" style="padding: 0;">
-			<a href="/sign_in" class="href btn-form btn-form-left waves-effect waves-dark btn">Zaloguj</a>
+			<a href="/sign_in" class="href teal lighten-4 btn-form btn-form-left waves-effect waves-dark btn">Zaloguj</a>
 		</div>
 
 		<div class="col s6" style="padding: 0;">

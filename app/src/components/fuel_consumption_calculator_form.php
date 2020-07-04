@@ -46,7 +46,7 @@
 	<!-- <input name="header" type="text" value="fuel_consumption_calculation" /> -->
 
 	<div class="col s6" style="padding: 0;">
-		<button id="calculator_save" class="btn-form btn-form-left waves-effect waves-light btn" <?php if (!isset($_SESSION['session_id'])) echo 'disabled'; ?>>Zapisz</button>
+		<button id="calculator_save" class="teal lighten-4 btn-form btn-form-left waves-effect waves-light btn" <?php if (!isset($_SESSION['session_id'])) echo 'disabled'; ?>>Zapisz</button>
 	</div>
 	<div class="col s6" style="padding: 0;">
 		<button class="btn-form btn-form-right waves-effect waves-light btn">Oblicz</button>
@@ -103,63 +103,9 @@
 		span.html(!value ? 'To pole nie może być puste.' : null);
 		if (!value) return;
 
-		var id = parseInt(value);
-		
-		console.log(result, select.val());
+		var id = parseInt(value),
+			data = 'header=fuel_consumption_calculation&vehicle_unit_id='+id+'&consumption='+result;
+			response = post(data);
     });
-
-	// $('#fuel_consumption_calculator_form').submit(function(event) {
-	// 	event.preventDefault();
-	//
-	// 	var distance = parseFloat($('#distance').val()),
-	// 		fuel = parseFloat($('#fuel').val());
-	//
-	// 	if (isNaN(distance) || isNaN(fuel)) return;
-	//
-	// 	let result = (fuel / distance) * 100,
-	// 		text = 'Spalanie wynosi: <b>' + result.toFixed(2) + '</b> l/100km.';
-	//
-	// 	$('#consumption').html(text);
-	// 	$('#calculator_info').show();
-	//
-	// 	console.log(fuel, distance);
-	//
-	// 	var form = $(this),
-	// 		data = 'header=fuel_consumption_calculation&' + $(this).serialize(),
-	// 		response = post2(data);
-	//
-	// 	response.done(function(result, status, jqXHR){
-	// 		console.log(data);
-	// 		console.log(result, status, jqXHR);
-	// 		try {
-	// 			// if (result && result[name])
-	// 			// {
-	// 			// 	for (var name in result)
-	// 			// 	{
-	// 			// 		var input = form.find('input[name=' + name + ']'),
-	// 			// 			span = input.siblings("span");
-	// 			//
-	// 			// 		if (result[name])
-	// 			// 		{
-	// 			// 			input.attr("class", "validate invalid");
-	// 			// 			span.attr("data-error", result[name]);
-	// 			// 		}
-	// 			// 		else
-	// 			// 		{
-	// 			// 			input.attr("class", "");
-	// 			// 		}
-	// 			// 	}
-	// 			// }
-	// 			// else
-	// 			// {
-	// 			// 	changeView('/sign_in');
-	// 			// }
-	// 		}
-	// 		catch (e)
-	// 		{
-	// 			console.log(e);
-	// 		}
-	// 	});
-    // });
 
 </script>

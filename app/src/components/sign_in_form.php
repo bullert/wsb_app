@@ -30,7 +30,7 @@
 		</div>
 
 		<div class="col s6" style="padding: 0;">
-			<a href="/sign_up" class="href btn-form btn-form-left waves-effect waves-dark btn">Zarejestruj</a>
+			<a href="/sign_up" class="href teal lighten-4 btn-form btn-form-left waves-effect waves-dark btn">Zarejestruj</a>
 		</div>
 
 		<div class="col s6" style="padding: 0;">
@@ -56,7 +56,7 @@
 
 		var form = $(this),
 			data = 'header=authentication&' + form.serialize(),
-			response = post2(data);
+			response = post(data);
 
 		response.done(function(result, status, jqXHR){
 			console.log(data);

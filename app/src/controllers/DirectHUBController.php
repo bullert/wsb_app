@@ -1,18 +1,6 @@
 <?php
 
-// echo "b".file_exists('../controllers/SessionController.php')."b";
-
-require_once('../../public/router2.php');
-
-// spl_autoload_register();
-
-// include_once('../../public/router.php');
-// include_once('router.php');
-
-// controllers('SessionController.php');
-
-// spl_autoload_register();
-// spl_autoload_register('Autoloader');
+require_once('../../public/router.php');
 
 class DirectHUBController {
 
@@ -61,6 +49,9 @@ class DirectHUBController {
 				break;
 			case 'fuel_consumption_calculation':
 				return VehiclesController::CalculateFuelConsumption(static::$data);
+				break;
+			case 'get_fuel_consumption_data':
+				return VehiclesController::GetFuelConsumptionData(static::$data);
 				break;
 			default:
 				DirectHUBController::Fail('DirectHUBController PostListener error: No destination found for header: ' . $header);

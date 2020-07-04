@@ -17,10 +17,10 @@
 
 .btn-form-left {
 	border-radius: 0 0 0 2px !important;
-	background: #9cc3ff;
+	/* background: #9cc3ff; */
 }
 .btn-form-left:hover {
-	background: #77a7f2;
+	/* background: #77a7f2; */
 }
 .btn-form-right {
 	border-radius: 0 0 2px 0 !important;

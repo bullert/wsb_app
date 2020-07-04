@@ -107,7 +107,76 @@ class VehiclesController
 
 	public static function CalculateFuelConsumption($data)
 	{
-		return $data;
+		$vehicle_unit_id = $data['vehicle_unit_id'];
+		$consumption = $data['consumption'];
+
+		$result = DatabaseController::Connect();
+		if ($result)
+			return $result;
+
+		$insert = "INSERT INTO fuel_consumption (vehicle_unit_id, l_per_100km) VALUES ('{$vehicle_unit_id}', '{$consumption}');";
+		$result = DatabaseController::Query($insert);
+
+		if (!$result)
+			return DatabaseController::Fail('Invalid query: ' . DatabaseController::getQueryError());
+
+		// SessionController::UpdateVehicles();
+
+		return;
+	}
+
+	public static function GetFuelConsumptionData($data)
+	{
+		$vehicles = $_SESSION['vehicles'];
+
+		$my_models_data = [];
+		$my_models_general_data = [];
+
+		$result = DatabaseController::Connect();
+		if ($result)
+			return $result;
+
+		foreach ($vehicles as $vehicle)
+		{
+			$vehicle_id = $vehicle['vehicle_id'];
+			$vehicle_unit_id = $vehicle['vehicle_unit_id'];
+
+			$insert = "SELECT min(l_per_100km) as min, avg(l_per_100km) as avg, max(l_per_100km) as max FROM fuel_consumption WHERE vehicle_unit_id = '{$vehicle_unit_id}'";
+			$result = DatabaseController::Query($insert);
+
+			if (!$result)
+				return DatabaseController::Fail('Invalid query: ' . DatabaseController::getQueryError());
+
+			if ($result->num_rows > 0)
+			{
+				$row = $result->fetch_assoc();
+				$my_models_data[$vehicle_unit_id] = ['min'=>$row['min'], 'avg'=>$row['avg'], 'max'=>$row['max']];
+			}
+			else
+			{
+				$my_models_data[$vehicle_unit_id] = ['vehicle_unit_id'=>null, 'min'=>null, 'avg'=>null, 'max'=>null];
+			}
+
+			$insert = "SELECT min(l_per_100km) as min, avg(l_per_100km) as avg, max(l_per_100km) as max FROM fuel_consumption NATURAL JOIN vehicles_units WHERE vehicle_id = '{$vehicle_id}'";
+			$result = DatabaseController::Query($insert);
+
+			if (!$result)
+				return DatabaseController::Fail('Invalid query: ' . DatabaseController::getQueryError());
+
+			if ($result->num_rows > 0)
+			{
+				$row = $result->fetch_assoc();
+				$my_models_general_data[$vehicle_unit_id] = ['min'=>$row['min'], 'avg'=>$row['avg'], 'max'=>$row['max']];
+			}
+			else
+			{
+				$my_models_general_data[$vehicle_unit_id] = ['vehicle_unit_id'=>null, 'min'=>null, 'avg'=>null, 'max'=>null];
+			}
+		}
+
+		// SessionController::UpdateVehicles();
+
+		return ['my_models_data'=>$my_models_data, 'my_models_general_data'=>$my_models_general_data];
 	}
 }
 

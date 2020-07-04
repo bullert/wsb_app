@@ -1,0 +1,52 @@
+
+#diagram {
+	background: #e9ebf0;
+	min-height: 300px;
+	padding: 24px 0;
+}
+
+#diagram .progress {
+	width: 90%;
+	border-radius: 0;
+	height: 14px;
+	margin: 0;
+	background: transparent !important;
+}
+#diagram .progress:nth-child(2n+1) {
+	margin-bottom: 24px;
+}
+#diagram .diagram-data-vehicle {
+	/* background: red; */
+	padding: 24px 0 0 0;
+}
+#diagram .determinate p {
+	font-size: 10px;
+	line-height: 14px;
+	text-align: right;
+	margin-right: -32px;
+	overflow: visible;
+}
+#diagram .diagram-data-vehicle-name {
+	padding: 10px 48px;
+}
+.diagram-legend {
+	font-size: 12px;
+	color: #333;
+}
+.diagram-legend .block {
+	width: 14px;
+	height: 14px;
+	margin: auto !important;
+}
+.diagram-legend table {
+	border-collapse: separate !important;
+}
+.diagram-legend tr, .diagram-legend td {
+	border: none !important;
+}
+.diagram-legend td {
+	width: 100px;
+}
+.diagram-legend td:first-child {
+	width: 200px;
+}

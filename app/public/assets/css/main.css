@@ -76,29 +76,6 @@ html, body {
 	color: #bdc1c6;
 }
 
-#ccontainer {
-    height: 100%;
-}
-
-
-
-.center {
-	left: 50%;
-	transform: translateX(-50%);
-}
-
-
-
-.main-container {
-	position: absolute;
-	/* background: yellow; */
-	top: 64px;
-	width: 100%;
-	min-height: calc(100% - 64px);
-	height: auto;
-	/* background: #aaa; */
-}
-
 main {
 	position: absolute;
 	top: 64px;
@@ -107,21 +84,6 @@ main {
 	height: auto;
 }
 
-.content-container {
-	/* background: #aaa; */
-}
-
-.content {
-	position: relative;
-	width: 70%;
-	margin: 100px auto;
-	padding: 48px;
-	background: #fff;
-}
-
 .card-panel {
-	/* position: absolute;
-	top: 0;
-	bottom: 0; */
 	margin: 100px auto !important;
 }

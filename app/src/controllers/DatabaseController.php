@@ -3,12 +3,12 @@
 class DatabaseController {
 
 	private static $host = 'localhost';
-	// private static $user = 'id14244243_root';
-	// private static $password = 'N=3@+Xn_JQy#f6Ue';
-	// private static $db_name = 'id14244243_app';
-	private static $user = 'root';
-	private static $password = '';
-	private static $db_name = 'app';
+	private static $user = 'id14244243_root';
+	private static $password = 'N=3@+Xn_JQy#f6Ue';
+	private static $db_name = 'id14244243_app';
+	// private static $user = 'root';
+	// private static $password = '';
+	// private static $db_name = 'app';
 	private static $conn;
 
 	public static function Connect()
